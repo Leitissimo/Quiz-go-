@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://koexrn8hupw8"]
+
+[ext_resource type="Texture2D" uid="uid://cvcmfxl6ese34" path="res://Sprites/Starman.png" id="1_o41q5"]
+[ext_resource type="Script" uid="uid://dhr3i7cjmfbh8" path="res://Cenas/skip_star.gd" id="1_p4ut6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4ut6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o41q5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r74hp"]
+
+[node name="skip_star" type="Area2D" unique_id=202843407]
+scale = Vector2(5, 5)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_p4ut6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=537267815]
+sprite_frames = SubResource("SpriteFrames_p4ut6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1958955731]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_r74hp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://om7idm0iss4d"]
+
+[ext_resource type="Script" uid="uid://4n02bjr8njgk" path="res://Cenas/main.gd" id="1_ruij7"]
+[ext_resource type="PackedScene" uid="uid://c3c2im6v2dyfp" path="res://Cenas/player.tscn" id="1_x3hk2"]
+[ext_resource type="PackedScene" uid="uid://b8nnlno14l1r4" path="res://Cenas/invisible_wall.tscn" id="4_lb8y5"]
+[ext_resource type="Script" uid="uid://bnomnx2bnly2t" path="res://Cenas/spawn_points.gd" id="5_ja1os"]
+[ext_resource type="Script" uid="uid://bwui6562l5dp5" path="res://Cenas/power_ups_spawn_points.gd" id="5_qns0q"]
+
+[node name="Main" type="Node" unique_id=73450663]
+script = ExtResource("1_ruij7")
+
+[node name="player" parent="." unique_id=104276685 instance=ExtResource("1_x3hk2")]
+position = Vector2(-774, -344)
+
+[node name="InvisibleBarriers" type="Node" parent="." unique_id=1291324157]
+
+[node name="invisibleWall" parent="InvisibleBarriers" unique_id=1331429137 instance=ExtResource("4_lb8y5")]
+position = Vector2(-937, 377)
+
+[node name="invisibleWall2" parent="InvisibleBarriers" unique_id=965404778 instance=ExtResource("4_lb8y5")]
+position = Vector2(-1998, -326)
+rotation = 1.5707964
+
+[node name="invisibleWall3" parent="InvisibleBarriers" unique_id=1192296980 instance=ExtResource("4_lb8y5")]
+position = Vector2(1117, -378)
+rotation = 4.712389
+
+[node name="invisibleWall4" parent="InvisibleBarriers" unique_id=480902786 instance=ExtResource("4_lb8y5")]
+position = Vector2(-937, -1220)
+rotation = 3.1415927
+
+[node name="spawnPoints" type="Node" parent="." unique_id=264868704 node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("5_ja1os")
+spawn_points = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
+
+[node name="Marker2D" type="Marker2D" parent="spawnPoints" unique_id=1674112100]
+position = Vector2(500, -1324)
+
+[node name="Marker2D2" type="Marker2D" parent="spawnPoints" unique_id=380065892]
+position = Vector2(-2397, -841)
+
+[node name="Marker2D3" type="Marker2D" parent="spawnPoints" unique_id=1833189148]
+position = Vector2(-2025, 617)
+
+[node name="Marker2D4" type="Marker2D" parent="spawnPoints" unique_id=413856795]
+position = Vector2(233, 587)
+
+[node name="quiz" type="CanvasLayer" parent="." unique_id=741943687]
+
+[node name="Control" type="Control" parent="quiz" unique_id=17906756]
+visible = false
+layout_mode = 3
+anchor_left = 0.429
+anchor_top = 0.024
+anchor_right = 0.504
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="quiz/Control" unique_id=779564421]
+layout_mode = 0
+offset_right = 154.0
+offset_bottom = 120.0
+pivot_offset = Vector2(30, 0)
+alignment = 1
+
+[node name="Label2" type="Label" parent="quiz/Control/VBoxContainer" unique_id=636730147]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Quanto é : 5431 + 1"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="quiz/Control/VBoxContainer" unique_id=1587878170]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Button" type="Button" parent="quiz/Control/VBoxContainer/GridContainer" unique_id=1766645681]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "button 1"
+
+[node name="Button2" type="Button" parent="quiz/Control/VBoxContainer/GridContainer" unique_id=2094015614]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "button 1"
+
+[node name="Button3" type="Button" parent="quiz/Control/VBoxContainer/GridContainer" unique_id=1620676125]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "button 1"
+
+[node name="Button4" type="Button" parent="quiz/Control/VBoxContainer/GridContainer" unique_id=1511594013]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "button 1"
+
+[node name="Label" type="Label" parent="quiz/Control/VBoxContainer" unique_id=1805469174]
+layout_mode = 2
+text = "Tempo: 5"
+horizontal_alignment = 1
+
+[node name="skip_question" type="Button" parent="quiz/Control/VBoxContainer" unique_id=1828037790]
+layout_mode = 2
+text = "Skips restantes: "
+
+[node name="timerQuiz" type="Timer" parent="quiz/Control" unique_id=1284180663]
+
+[node name="timerNextWave" type="Timer" parent="." unique_id=635999544]
+wait_time = 5.0
+autostart = true
+
+[node name="powerUpsSpawnPoints" type="Node" parent="." unique_id=247322608 node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("5_qns0q")
+spawn_points = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3"), NodePath("Marker2D4")]
+
+[node name="Marker2D" type="Marker2D" parent="powerUpsSpawnPoints" unique_id=1085719201]
+position = Vector2(-1409, -677)
+
+[node name="Marker2D2" type="Marker2D" parent="powerUpsSpawnPoints" unique_id=1681331521]
+position = Vector2(659, 110)
+
+[node name="Marker2D3" type="Marker2D" parent="powerUpsSpawnPoints" unique_id=1664483584]
+position = Vector2(-1543, 55)
+
+[node name="Marker2D4" type="Marker2D" parent="powerUpsSpawnPoints" unique_id=493705318]
+position = Vector2(76, -677)
+
+[node name="timerNextSpawnPowerUp" type="Timer" parent="powerUpsSpawnPoints" unique_id=1847504063]
+wait_time = 5.0
+autostart = true
+
+[node name="timerSpawnGap" type="Timer" parent="powerUpsSpawnPoints" unique_id=475800210]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="stop_enemies" from="player" to="." method="_on_player_stop_enemies"]
+[connection signal="stop_enemies" from="player" to="spawnPoints" method="_on_player_stop_enemies"]
+[connection signal="pressed" from="quiz/Control/VBoxContainer/skip_question" to="." method="_on_skip_question_pressed"]
+[connection signal="timeout" from="quiz/Control/timerQuiz" to="." method="_on_timer_quiz_timeout"]
+[connection signal="timeout" from="timerNextWave" to="spawnPoints" method="_on_timer_next_wave_timeout"]
+[connection signal="timeout" from="powerUpsSpawnPoints/timerNextSpawnPowerUp" to="powerUpsSpawnPoints" method="_on_timer_next_spawn_power_up_timeout"]
