@@ -18,10 +18,9 @@ func _process(delta: float) -> void:
 func _on_timer_next_spawn_power_up_timeout() -> void:
 	
 	var itens = {
-		"nuke": 5,    
-		"star": 15,   
-		"coin": 60,   
-		"nada": 20   
+		"nuke": 2,    
+		"star": 3  
+		  
 	}
 	
 	var peso_total = 0
@@ -38,8 +37,7 @@ func _on_timer_next_spawn_power_up_timeout() -> void:
 			match item:
 				"nuke": spawn_nuke()
 				"star": spawn_star()
-				"coin": spawn_coin()
-				"nada": pass
+				
 			break 
 func spawn_coin():
 	var ponto = spawn_points.pick_random() 

@@ -74,7 +74,7 @@ func getDead() -> bool:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	
 	if animation_player.animation == "death":
-		if randi()%2:
+		if randi()%3:
 			var coins = coin.instantiate()
 			coins.global_position = self.global_position
 			get_parent().add_child.call_deferred(coins)
