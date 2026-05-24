@@ -1,8 +1,8 @@
 extends Node
 
 @onready var player = get_tree().get_first_node_in_group("player")
-@onready var label = $quiz/Control/VBoxContainer/Label2
-@onready var grid = $quiz/Control/VBoxContainer/GridContainer
+@onready var label =$quiz/Control/Panel/VBoxContainer/Label2
+@onready var grid = $quiz/Control/Panel/VBoxContainer/GridContainer
 var resposta_correta = ""
 var cont: int = 5
 
@@ -38,10 +38,10 @@ func _on_player_stop_enemies() -> void:
 func spawn_quizUI():
 	$quiz/Control.show()
 	if GameManager.skips > 0:
-		$quiz/Control/VBoxContainer/skip_question.text = "Skips restantes: "+str(GameManager.skips)
-		$quiz/Control/VBoxContainer/skip_question.show()
+		$quiz/Control/Panel/VBoxContainer/skip_question.text = "Skips restantes: "+str(GameManager.skips)
+		$quiz/Control/Panel/VBoxContainer/skip_question.show()
 	else :
-		$quiz/Control/VBoxContainer/skip_question.hide()
+		$quiz/Control/Panel/VBoxContainer/skip_question.hide()
 
 func gerar_pergunta():
 	if banco_de_perguntas.is_empty():
@@ -50,7 +50,7 @@ func gerar_pergunta():
 		return
 	
 	cont = 5
-	$quiz/Control/VBoxContainer/Label.text = "Tempo: "+str(cont)
+	$quiz/Control/Panel/VBoxContainer/Label.text = "Tempo: "+str(cont)
 	$quiz/Control/timerQuiz.start()
 	var chaves = banco_de_perguntas.keys() 
 	var texto_pergunta = chaves.pick_random() 
@@ -106,7 +106,7 @@ func _on_timer_quiz_timeout() -> void:
 	
 	if cont > 0:
 		cont -= 1
-		$quiz/Control/VBoxContainer/Label.text = "Tempo: "+str(cont)
+		$quiz/Control/Panel/VBoxContainer/Label.text = "Tempo: "+str(cont)
 	else:
 		$quiz/Control/timerQuiz.stop()
 		player.hit()
