@@ -6,6 +6,7 @@ func _ready() -> void:
 	$VBoxContainer/GridContainer/Label2.text = str(GameManager.waves)
 	$VBoxContainer/GridContainer/Label4.text = str(GameManager.coins)
 	$VBoxContainer/GridContainer/Label6.text = str(GameManager.enemies_killed)
+	GameManager.save_game()
 	
 	
 

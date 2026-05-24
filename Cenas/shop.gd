@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_return_pressed() -> void:
+	GameManager.save_game()
 	get_tree().change_scene_to_file("res://Cenas/main.tscn")
 
 
@@ -22,16 +23,26 @@ func _on_hp_1_pressed() -> void:
 		$Label.text = "COINS: "+str(GameManager.coins_total)
 	else :
 		print("saldo insuficiente")
+		
+	GameManager.save_game()
 
 
 func _on_dano_1_pressed() -> void:
+	
 	if GameManager.coins_total >= 10:
 		GameManager.coins_total -= 10
 		GameManager.dano += 1
 		$Label.text = "COINS: "+str(GameManager.coins_total)
 	else :
 		print("saldo insuficiente")
+	
+	GameManager.save_game()
 
 
 func _on_tiro_1_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_quit_pressed() -> void:
+	GameManager.save_game()
+	get_tree().quit()

@@ -285,6 +285,7 @@ position = Vector2(233, 587)
 [node name="quiz" type="CanvasLayer" parent="." unique_id=741943687]
 
 [node name="Control" type="Control" parent="quiz" unique_id=17906756]
+visible = false
 layout_mode = 3
 anchor_left = 0.429
 anchor_top = 0.024
