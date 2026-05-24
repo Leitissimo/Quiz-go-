@@ -23,7 +23,7 @@ func _on_hp_1_pressed() -> void:
 		GameManager.hp += 1
 		$Label.text = "COINS: "+str(GameManager.coins_total)
 	else :
-		print("saldo insuficiente")
+		alert()
 		
 	GameManager.save_game()
 
@@ -35,7 +35,7 @@ func _on_dano_1_pressed() -> void:
 		GameManager.dano += 1
 		$Label.text = "COINS: "+str(GameManager.coins_total)
 	else :
-		print("saldo insuficiente")
+		alert()
 	
 	GameManager.save_game()
 
