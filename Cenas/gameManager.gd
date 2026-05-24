@@ -7,7 +7,7 @@ var skips: int = 0
 var coins_total = 0
 var hp: int = 3
 var dano:int = 1
-var qtd_tiro:int = 1
+var qtd_tiro:int = 2
 var quiz_aberto: bool = false
 
 # Called when the node enters the scene tree for the first time.

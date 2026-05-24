@@ -30,7 +30,7 @@ animations = [{
 radius = 7.0
 
 [node name="powerUpCoin" type="Area2D" unique_id=968067543]
-scale = Vector2(6, 6)
+scale = Vector2(4, 4)
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_hwwu8")

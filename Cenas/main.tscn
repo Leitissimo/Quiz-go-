@@ -2,12 +2,30 @@
 
 [ext_resource type="Script" uid="uid://4n02bjr8njgk" path="res://Cenas/main.gd" id="1_ruij7"]
 [ext_resource type="PackedScene" uid="uid://c3c2im6v2dyfp" path="res://Cenas/player.tscn" id="1_x3hk2"]
+[ext_resource type="Texture2D" uid="uid://8as4lix1a8pr" path="res://Sprites/HardBlock.png" id="2_qns0q"]
+[ext_resource type="Texture2D" uid="uid://co3bdq1m4vg4f" path="res://Sprites/Brick.png" id="3_n00j1"]
 [ext_resource type="PackedScene" uid="uid://b8nnlno14l1r4" path="res://Cenas/invisible_wall.tscn" id="4_lb8y5"]
 [ext_resource type="Script" uid="uid://bnomnx2bnly2t" path="res://Cenas/spawn_points.gd" id="5_ja1os"]
 [ext_resource type="Script" uid="uid://bwui6562l5dp5" path="res://Cenas/power_ups_spawn_points.gd" id="5_qns0q"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n00j1"]
+texture = ExtResource("2_qns0q")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6di6"]
+texture = ExtResource("3_n00j1")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_x6di6"]
+sources/0 = SubResource("TileSetAtlasSource_n00j1")
+sources/1 = SubResource("TileSetAtlasSource_x6di6")
+
 [node name="Main" type="Node" unique_id=73450663]
 script = ExtResource("1_ruij7")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1887285178]
+tile_set = SubResource("TileSet_x6di6")
+format = 2
 
 [node name="player" parent="." unique_id=104276685 instance=ExtResource("1_x3hk2")]
 position = Vector2(-774, -344)
@@ -28,6 +46,40 @@ rotation = 4.712389
 [node name="invisibleWall4" parent="InvisibleBarriers" unique_id=480902786 instance=ExtResource("4_lb8y5")]
 position = Vector2(-937, -1220)
 rotation = 3.1415927
+
+[node name="TextureRect" type="TextureRect" parent="InvisibleBarriers" unique_id=2026345664]
+offset_left = -2004.0
+offset_top = -1402.0
+offset_right = -1964.0
+offset_bottom = 506.0
+texture = ExtResource("3_n00j1")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="InvisibleBarriers" unique_id=1887039114]
+offset_left = 1234.0
+offset_top = -1248.0
+offset_right = 1274.0
+offset_bottom = 1994.6885
+rotation = 1.5707964
+texture = ExtResource("3_n00j1")
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="InvisibleBarriers" unique_id=488446139]
+offset_left = 1112.0
+offset_top = -1394.0
+offset_right = 1152.0
+offset_bottom = 514.0
+texture = ExtResource("3_n00j1")
+stretch_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="InvisibleBarriers" unique_id=452231423]
+offset_left = 1234.0
+offset_top = 368.0
+offset_right = 1274.0
+offset_bottom = 3610.6885
+rotation = 1.5707964
+texture = ExtResource("3_n00j1")
+stretch_mode = 1
 
 [node name="spawnPoints" type="Node" parent="." unique_id=264868704 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("5_ja1os")

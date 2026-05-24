@@ -11,6 +11,10 @@ var hp: int = GameManager.hp
 var piscando: bool = false
 var piscando_tween: Tween
 var dano: int = GameManager.dano
+var direction: Vector2
+var dead: bool = false
+
+@onready var player_animation: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	hp = GameManager.hp
@@ -18,14 +22,17 @@ func _ready() -> void:
 	$CanvasLayer/HBoxContainer/Label.text = "HEALTH: "+str(hp)
 
 func _physics_process(delta: float) -> void:
-	if can_move:
-		var direction: Vector2 = Input.get_vector("left", "right", "up", "down").normalized()
+	if not dead:
+		if can_move:
+			direction = Input.get_vector("left", "right", "up", "down").normalized()
+			
+			velocity = direction * speed
+		else:
+			velocity = Vector2.ZERO
 		
-		velocity = direction * speed
-	else:
-		velocity = Vector2.ZERO
-	
-	move_and_slide()
+		player_animation.update_animation(velocity)
+		
+		move_and_slide()
 	
 
 
@@ -36,27 +43,47 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		invuneravel = true
 		
 
-func getClosestEnemy(indice_alvo: int = 0):
-	var enemies = get_tree().get_nodes_in_group("enemy")
-	if enemies.is_empty() or indice_alvo >= enemies.size():
-		return null
-	enemies.sort_custom(func(a, b):
+
+func get_closest_enemies(qtd_alvos: int) -> Array:
+	var all_enemies = get_tree().get_nodes_in_group("enemy")
+	var living_enemies: Array = []
+	
+	for enemy in all_enemies:
+		
+		if not enemy.getDead():
+			living_enemies.append(enemy)
+			
+	if living_enemies.is_empty():
+		return []
+		
+	living_enemies.sort_custom(func(a, b):
 		var dist_a = global_position.distance_to(a.global_position)
 		var dist_b = global_position.distance_to(b.global_position)
 		return dist_a < dist_b
 	)
-	return enemies[indice_alvo]
+	
+	return living_enemies.slice(0, qtd_alvos)
 
 func shoot():
-	for i in range(GameManager.qtd_tiro):
-		var target = getClosestEnemy(i)
-		if target != null:
-			if (target.global_position - global_position).length() < 1000:
-				var player_shoot = player_shoot_scene.instantiate()
-				player_shoot.setDamage(dano)
-				player_shoot.setDirection((target.global_position - global_position).normalized())
-				player_shoot.position = self.position
-				get_parent().add_child(player_shoot)
+	
+	var targets = get_closest_enemies(GameManager.qtd_tiro)
+	
+	if targets.is_empty():
+		return
+
+	for target in targets:
+		
+		if (target.global_position - global_position).length() < 1000:
+			var player_shoot = player_shoot_scene.instantiate()
+			player_shoot.setDamage(dano)
+			
+			var direction_to_target = (target.global_position - global_position).normalized()
+			player_shoot.setDirection(direction_to_target)
+			
+			player_shoot.position = self.position
+			get_parent().add_child(player_shoot)
+			
+
 
 
 func _on_timer_shoot_timeout() -> void:
@@ -78,7 +105,8 @@ func hit():
 	if hp > 0:
 		$CanvasLayer/HBoxContainer/Label.text = "HEALTH: " + str(hp)
 	else:
-		get_tree().call_deferred("change_scene_to_file", "res://Cenas/gameOver.tscn")
+		dead = true
+		player_animation.death()
 
 func piscar():
 	if piscando_tween and piscando_tween.is_valid():
@@ -100,3 +128,8 @@ func setWave():
 
 func setCoins():
 	$CanvasLayer/HBoxContainer/Label3.text = "COINS: "+str(GameManager.coins)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if player_animation.animation == "death":
+		get_tree().call_deferred("change_scene_to_file", "res://Cenas/gameOver.tscn")
