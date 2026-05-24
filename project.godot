@@ -22,6 +22,7 @@ GameManager="*uid://b6cjj2at6vurj"
 
 [display]
 
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 

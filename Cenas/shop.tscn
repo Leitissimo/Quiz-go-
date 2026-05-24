@@ -5,6 +5,11 @@
 [node name="shop" type="Node" unique_id=491884972]
 script = ExtResource("1_61mlq")
 
+[node name="alerta" type="AcceptDialog" parent="." unique_id=1736636436]
+oversampling_override = 1.0
+size = Vector2i(280, 100)
+dialog_text = "Saldo insuficiente!"
+
 [node name="GridContainer" type="GridContainer" parent="." unique_id=335986577]
 anchors_preset = -1
 anchor_top = 0.5
@@ -18,6 +23,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 19
 text = "Preço: 10"
 horizontal_alignment = 1
 
@@ -25,12 +31,14 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Aumentar Hp +1"
+theme_override_font_sizes/font_size = 19
+text = "Aumentar Hp"
 
 [node name="Label2" type="Label" parent="GridContainer" unique_id=1305212791]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 19
 text = "Preço: 10"
 horizontal_alignment = 1
 
@@ -38,12 +46,14 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Aumentar dano +1"
+theme_override_font_sizes/font_size = 19
+text = "Aumentar dano"
 
 [node name="Label3" type="Label" parent="GridContainer" unique_id=707757182]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 19
 text = "Preço: 30"
 horizontal_alignment = 1
 
@@ -51,7 +61,23 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Aumentar quantidade de tiro +1"
+theme_override_font_sizes/font_size = 19
+text = "Aumentar quantidade de tiro"
+
+[node name="Label4" type="Label" parent="GridContainer" unique_id=1173414412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 19
+text = "Preço: 30"
+horizontal_alignment = 1
+
+[node name="velocity" type="Button" parent="GridContainer" unique_id=1312261244]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 19
+text = "Aumentar Speed"
 
 [node name="HSeparator" type="HSeparator" parent="GridContainer" unique_id=1685194903]
 custom_minimum_size = Vector2(0, 10)
@@ -61,6 +87,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 19
 text = "Return"
 
 [node name="HSeparator2" type="HSeparator" parent="GridContainer" unique_id=20853346]
@@ -69,6 +96,7 @@ layout_mode = 2
 
 [node name="quit" type="Button" parent="GridContainer" unique_id=1996034521]
 layout_mode = 2
+theme_override_font_sizes/font_size = 19
 text = "Quit"
 
 [node name="Label" type="Label" parent="." unique_id=1754281050]
@@ -85,8 +113,11 @@ size_flags_vertical = 6
 text = "COINS: 300"
 horizontal_alignment = 1
 
+[connection signal="canceled" from="alerta" to="." method="_on_alerta_canceled"]
+[connection signal="confirmed" from="alerta" to="." method="_on_alerta_confirmed"]
 [connection signal="pressed" from="GridContainer/hp+1" to="." method="_on_hp_1_pressed"]
 [connection signal="pressed" from="GridContainer/dano+1" to="." method="_on_dano_1_pressed"]
 [connection signal="pressed" from="GridContainer/tiro+1" to="." method="_on_tiro_1_pressed"]
+[connection signal="pressed" from="GridContainer/velocity" to="." method="_on_velocity_pressed"]
 [connection signal="pressed" from="GridContainer/return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="GridContainer/quit" to="." method="_on_quit_pressed"]

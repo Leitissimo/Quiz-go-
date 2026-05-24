@@ -11,7 +11,7 @@ var hp: int = 3
 var dano: int = 1
 var qtd_tiro: int = 1
 var quiz_aberto: bool = false
-
+var speed: float = 500.0
 
 func _ready() -> void:
 	load_game()
@@ -34,6 +34,7 @@ func save_game() -> void:
 	config.set_value("Player", "hp", hp)
 	config.set_value("Player", "dano", dano)
 	config.set_value("Player", "qtd_tiro", qtd_tiro)
+	config.set_value("Player", "speed", speed)
 	config.set_value("Stats", "coins_total", coins_total)
 	
 	config.save(SAVE_PATH)
@@ -49,12 +50,16 @@ func load_game() -> void:
 		
 	hp = config.get_value("Player", "hp", 3)
 	dano = config.get_value("Player", "dano", 1)
-	qtd_tiro = config.get_value("Player", "qtd_tiro", 2)
+	qtd_tiro = config.get_value("Player", "qtd_tiro", 1)
+	speed = config.get_value("Player", "speed", 500.0)
 	coins_total = config.get_value("Stats", "coins_total", 0)
 
 
 func _notification(what: int) -> void:
 	
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		
 		save_game() 
-		get_tree().quit() 
+		
+		get_tree().quit()
+		

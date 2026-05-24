@@ -19,6 +19,7 @@ var dead: bool = false
 func _ready() -> void:
 	hp = GameManager.hp
 	dano = GameManager.dano
+	speed = GameManager.speed
 	$CanvasLayer/HBoxContainer/Label.text = "HEALTH: "+str(hp)
 
 func _physics_process(delta: float) -> void:
