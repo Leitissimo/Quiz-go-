@@ -211,10 +211,8 @@ script = ExtResource("1_pmvhq")
 position = Vector2(15, -26)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_pmvhq")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
-frame = 7
-frame_progress = 1.0
 script = ExtResource("5_yuqgu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117959640]
