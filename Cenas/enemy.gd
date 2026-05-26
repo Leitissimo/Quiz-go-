@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var speed: float = 300.0;
 var can_move = true;
-var hp: int = 2
+var hp: int = int(2 + GameManager.waves/10)
 const KNOCK_BACK_STRENGTH: int = 1200
 @onready var animation_player = $AnimatedSprite2D
 
@@ -14,7 +14,7 @@ var isAttacking: bool = false
 var dead: bool = false
 
 func _physics_process(delta: float) -> void:
-	
+	print(hp)
 	if not dead:
 		if can_move and player != null:
 			var direction: Vector2 = (player.position - self.position).normalized()
