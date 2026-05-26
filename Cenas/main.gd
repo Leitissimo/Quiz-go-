@@ -81,9 +81,11 @@ func gerar_pergunta():
 
 func _ao_responder(valor_clicado):
 	if valor_clicado == resposta_correta:
+		$acertou.play()
 		
 		continuar_jogo()
 	else:
+		$errou.play()
 		player.hit()
 		continuar_jogo()
 	

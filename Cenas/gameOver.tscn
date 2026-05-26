@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bv30ytgnl3m6"]
 
 [ext_resource type="Script" uid="uid://dia426ixdutsq" path="res://Cenas/game_over.gd" id="1_i35sc"]
+[ext_resource type="AudioStream" uid="uid://cfm1vgmo2glhk" path="res://sfx/17. Triage at Dawn.mp3" id="2_jxd6e"]
 
 [node name="Control" type="Control" unique_id=228956864]
 layout_mode = 3
@@ -71,6 +72,11 @@ horizontal_alignment = 2
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=1185144491]
 layout_mode = 2
 text = "SHOP"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1632118213]
+stream = ExtResource("2_jxd6e")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

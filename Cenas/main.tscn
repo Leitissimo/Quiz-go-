@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bljbdkj47mfi" path="res://tileMap/Bestiary-Mad_Forest.png" id="4_x6di6"]
 [ext_resource type="Script" uid="uid://bnomnx2bnly2t" path="res://Cenas/spawn_points.gd" id="5_ja1os"]
 [ext_resource type="Script" uid="uid://bwui6562l5dp5" path="res://Cenas/power_ups_spawn_points.gd" id="5_qns0q"]
+[ext_resource type="AudioStream" uid="uid://bsckbt4rybe41" path="res://sfx/12. Apprehension and Evasion.mp3" id="9_btbr3"]
+[ext_resource type="AudioStream" uid="uid://bgwa3jpvp0uoc" path="res://sfx/acerto.mp3" id="10_7yi6i"]
+[ext_resource type="AudioStream" uid="uid://ct2o8ateimx1x" path="res://sfx/buzzer-error.mp3" id="11_irhh0"]
+[ext_resource type="PackedScene" uid="uid://by0utjmpox3rx" path="res://Cenas/nuke.tscn" id="12_irhh0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6di6"]
 texture = ExtResource("2_qns0q")
@@ -303,9 +307,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -2.4
-offset_top = 10.0
+offset_top = 30.0
 offset_right = 2.4000244
-offset_bottom = 16.951996
+offset_bottom = 36.951996
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x6di6")
@@ -388,6 +392,21 @@ autostart = true
 [node name="timerSpawnGap" type="Timer" parent="powerUpsSpawnPoints" unique_id=475800210]
 wait_time = 0.2
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1326044597]
+stream = ExtResource("9_btbr3")
+autoplay = true
+parameters/looping = true
+
+[node name="acertou" type="AudioStreamPlayer2D" parent="." unique_id=83780991]
+stream = ExtResource("10_7yi6i")
+pitch_scale = 1.5
+
+[node name="errou" type="AudioStreamPlayer2D" parent="." unique_id=596501240]
+stream = ExtResource("11_irhh0")
+
+[node name="nuke" parent="." unique_id=1492585696 instance=ExtResource("12_irhh0")]
+position = Vector2(-348.99997, -412.99997)
 
 [connection signal="stop_enemies" from="player" to="." method="_on_player_stop_enemies"]
 [connection signal="stop_enemies" from="player" to="spawnPoints" method="_on_player_stop_enemies"]

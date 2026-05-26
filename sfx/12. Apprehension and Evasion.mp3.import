@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsckbt4rybe41"
+path="res://.godot/imported/12. Apprehension and Evasion.mp3-d0039b4c225fdf54fd432beaeea9b83d.mp3str"
+
+[deps]
+
+source_file="res://sfx/12. Apprehension and Evasion.mp3"
+dest_files=["res://.godot/imported/12. Apprehension and Evasion.mp3-d0039b4c225fdf54fd432beaeea9b83d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -18,6 +18,8 @@ func _on_return_pressed() -> void:
 	
 
 func _on_hp_1_pressed() -> void:
+	
+	$AudioStreamPlayer2D.play()
 	if GameManager.coins_total >= 10:
 		GameManager.coins_total -= 10
 		GameManager.hp += 1
@@ -30,6 +32,7 @@ func _on_hp_1_pressed() -> void:
 
 func _on_dano_1_pressed() -> void:
 	
+	$AudioStreamPlayer2D.play()
 	if GameManager.coins_total >= 10:
 		GameManager.coins_total -= 10
 		GameManager.dano += 1
@@ -41,6 +44,8 @@ func _on_dano_1_pressed() -> void:
 
 
 func _on_tiro_1_pressed() -> void:
+	
+	$AudioStreamPlayer2D.play()
 	if GameManager.coins_total >= 30:
 		GameManager.coins_total -= 30
 		GameManager.qtd_tiro += 1
@@ -70,6 +75,8 @@ func _on_alerta_canceled() -> void:
 
 
 func _on_velocity_pressed() -> void:
+	
+	$AudioStreamPlayer2D.play()
 	if GameManager.coins_total >= 30:
 		GameManager.coins_total -= 30
 		GameManager.speed += 50

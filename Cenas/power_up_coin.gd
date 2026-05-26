@@ -13,8 +13,12 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		$AudioStreamPlayer2D.play()
+		hide()
+		$CollisionShape2D.set_deferred("disabled", true)
 		GameManager.coins += 1
 		GameManager.coins_total += 1
 		body.setCoins()
+		await $AudioStreamPlayer2D.finished
 		call_deferred("queue_free")
 		

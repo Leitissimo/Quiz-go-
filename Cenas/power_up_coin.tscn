@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://boarwxnd8uqy8" path="res://Sprites/Coin2.png" id="2_hwwu8"]
 [ext_resource type="Texture2D" uid="uid://rc8mt153lydh" path="res://Sprites/Coin3.png" id="3_3r1r7"]
 [ext_resource type="Texture2D" uid="uid://wn4dcjfa6g3m" path="res://Sprites/Coin4.png" id="4_tdejo"]
+[ext_resource type="AudioStream" uid="uid://c8cu0oaajn86b" path="res://sfx/wolfy_sanic-collect-ring-15982.mp3" id="6_3r1r7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qkfsu"]
 animations = [{
@@ -42,5 +43,8 @@ frame_progress = 0.268635
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582168672]
 shape = SubResource("CircleShape2D_hawii")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=485778548]
+stream = ExtResource("6_3r1r7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

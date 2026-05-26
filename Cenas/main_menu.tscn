@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bljbdkj47mfi" path="res://tileMap/Bestiary-Mad_Forest.png" id="3_ch3q6"]
 [ext_resource type="PackedScene" uid="uid://c3c2im6v2dyfp" path="res://Cenas/player.tscn" id="5_ch3q6"]
 [ext_resource type="PackedScene" uid="uid://dvg2n3sdmah6f" path="res://Cenas/enemy.tscn" id="6_jeejk"]
+[ext_resource type="AudioStream" uid="uid://b4yi3q8epv4p5" path="res://sfx/lesiakower-crafterx27s-mallets-286976.mp3" id="7_vorps"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jeejk"]
 texture = ExtResource("1_bd8gm")
@@ -261,5 +262,10 @@ collision_mask = 7
 [node name="enemy" parent="." unique_id=1603532884 instance=ExtResource("6_jeejk")]
 position = Vector2(939, 243)
 collision_mask = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=561766479]
+stream = ExtResource("7_vorps")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
