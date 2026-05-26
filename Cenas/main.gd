@@ -5,6 +5,7 @@ extends Node
 @onready var grid = $quiz/Control/Panel/VBoxContainer/GridContainer
 var resposta_correta = ""
 var cont: int = 5
+var segundos: float
 
 var banco_de_perguntas : Dictionary = {
 	"Quanto é: 35 + 42 ?": 77,
@@ -26,6 +27,9 @@ func _process(delta: float) -> void:
 
 
 func _on_player_stop_enemies() -> void:
+	segundos = $music.get_playback_position()
+	print(segundos)
+	$music.stop()
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for e in enemies:
 		e.can_move = false
@@ -90,6 +94,7 @@ func _ao_responder(valor_clicado):
 		continuar_jogo()
 	
 func continuar_jogo():
+	$music.play(segundos)
 	$quiz/Control/timerQuiz.stop()
 	var player = get_tree().get_first_node_in_group("player")
 	player.setMove()

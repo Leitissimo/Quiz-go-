@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bes0csp1l2eg8"
+path="res://.godot/imported/uncompressed portal radio song.mp3-85a9006ba1d485e5bf67cc9dac97a543.mp3str"
+
+[deps]
+
+source_file="res://sfx/uncompressed portal radio song.mp3"
+dest_files=["res://.godot/imported/uncompressed portal radio song.mp3-85a9006ba1d485e5bf67cc9dac97a543.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
