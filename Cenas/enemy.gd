@@ -14,7 +14,7 @@ var isAttacking: bool = false
 var dead: bool = false
 
 func _physics_process(delta: float) -> void:
-	print(hp)
+	
 	if not dead:
 		if can_move and player != null:
 			var direction: Vector2 = (player.position - self.position).normalized()
