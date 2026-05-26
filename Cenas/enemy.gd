@@ -14,6 +14,7 @@ var isAttacking: bool = false
 var dead: bool = false
 
 func _physics_process(delta: float) -> void:
+	
 	if not dead:
 		if can_move and player != null:
 			var direction: Vector2 = (player.position - self.position).normalized()
@@ -51,7 +52,7 @@ func trigger_animation():
 	elif velocity.x < 0:
 		animation_player.flip_h = true
 	
-	if (player.global_position - global_position).length() < 300 and can_move:
+	if (player.global_position - global_position).length() < 200 and can_move:
 		animation_player.play("attack")
 		isAttacking = true
 	

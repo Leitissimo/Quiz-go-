@@ -4,6 +4,8 @@ signal stop_enemies
 
 var player_shoot_scene = preload("res://Cenas/player_shoot.tscn")
 
+@export var isCameraOn:bool
+
 var speed: float = 500.0
 var can_move: bool = true
 var invuneravel: bool = false
@@ -17,6 +19,9 @@ var dead: bool = false
 @onready var player_animation: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
+	if not isCameraOn:
+		$Camera2D.queue_free()
+		$TimerShoot.stop()
 	hp = GameManager.hp
 	dano = GameManager.dano
 	speed = GameManager.speed
@@ -38,7 +43,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy") and not invuneravel:
+	if body.is_in_group("enemy") and not invuneravel and  isCameraOn:
 		can_move = false
 		emit_signal("stop_enemies")
 		invuneravel = true
