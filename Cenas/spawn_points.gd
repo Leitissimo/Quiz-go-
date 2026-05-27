@@ -24,7 +24,7 @@ func spawn_enemies():
 	
 	for i in range(quantidade):
 
-		if inimigos_vivos >= 15 or GameManager.quiz_aberto:
+		if inimigos_vivos >= (wave/2) + 10 or GameManager.quiz_aberto:
 			break
 			
 		var enemy = Enemy.instantiate()

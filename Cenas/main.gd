@@ -66,7 +66,7 @@ func gerar_pergunta():
 		get_tree().call_deferred("change_scene_to_file", "res://Cenas/gameOver.tscn")
 		return
 	
-	cont = 5
+	cont = 10
 	$quiz/Control/Panel/VBoxContainer/Label.text = "Tempo: "+str(cont)
 	$quiz/Control/timerQuiz.start()
 	var chaves = banco_de_perguntas.keys() 

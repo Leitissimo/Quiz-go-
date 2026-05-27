@@ -55,12 +55,6 @@ func _on_tiro_1_pressed() -> void:
 	
 	GameManager.save_game()
 
-
-func _on_quit_pressed() -> void:
-	GameManager.save_game()
-	get_tree().quit()
-
-
 func alert():
 	$GridContainer.hide()
 	alerta.popup_centered()

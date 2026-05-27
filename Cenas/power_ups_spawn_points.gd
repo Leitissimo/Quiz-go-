@@ -19,7 +19,8 @@ func _on_timer_next_spawn_power_up_timeout() -> void:
 	
 	var itens = {
 		"nuke": 4,    
-		"star": 1  
+		"star": 1,
+		"nothing":5  
 		  
 	}
 	
@@ -37,6 +38,7 @@ func _on_timer_next_spawn_power_up_timeout() -> void:
 			match item:
 				"nuke": spawn_nuke()
 				"star": spawn_star()
+				"nothing": nothing()
 				
 			break 
 func spawn_coin():
@@ -60,3 +62,6 @@ func spawn_star():
 	if ponto.get_child_count() == 0:
 		var star = skip_star_scene.instantiate()
 		ponto.add_child(star)
+
+func nothing():
+	pass
