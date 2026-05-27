@@ -14,7 +14,20 @@ var banco_de_perguntas : Dictionary = {
 	"Quanto é o dobro de 25?": 50,
 	"Quanto é 20 + 20 + 20 + 7": 67,
 	"Em uma caixa há 12 dúzias de ovos. Quantos ovos há no total?": 144,
-	"Quanto é: 1/2 + 1/4": 0.75
+	"Quanto é: 1/2 + 1/4": 0.75,
+	"Quanto é √16": 4,
+	"Quanto é 42-15":27,
+	"Quanto é 20% de 100":20,
+	"Qual o valor de 𝝅":3.14,
+	"Qual a area de um quadrado com lado 6":36,
+	"Qual o divisor comum de 6 e 8":2,
+	"Quanto é a soma dos angulos internos de um triangulo":180,
+	"Quanto é 10*10":100,
+	"Quantos lados tem um pentagono":5,
+	"Quanto é o raio de uma circunferência com diametro 10":5,
+	"Quantos dias tem um ano bissexto":366,
+	"Qual o lado do quadrado com perimetro 24":6
+	
 }
 
 func _ready() -> void:

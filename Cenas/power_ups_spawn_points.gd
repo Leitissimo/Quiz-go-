@@ -18,8 +18,8 @@ func _process(delta: float) -> void:
 func _on_timer_next_spawn_power_up_timeout() -> void:
 	
 	var itens = {
-		"nuke": 2,    
-		"star": 3  
+		"nuke": 4,    
+		"star": 1  
 		  
 	}
 	
