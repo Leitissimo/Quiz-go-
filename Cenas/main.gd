@@ -38,7 +38,16 @@ var banco_de_perguntas : Dictionary = {
 	"Quantos segundos tem 1 minuto":60,
 	"Quantas letras tem a palavra QUARTO":6,
 	"Quantos lados tem um dado":6,
-	"Quantos dias tem uma semana":7
+	"Quantos dias tem uma semana":7,
+	"Quanto é 9x2":18,
+	"Quanto é 30+20":50,
+	"Quanto é 9x0":0,
+	"Quanto é √169":13,
+	"Quanto é √4":2,
+	"Qunto é 6x10+7":67,
+	"Quantas letras tem um alfabeto":26,
+	"Quantos gramas tem um quilograma":1000,
+	"Quantas horas tem dois dias":48
 }
 
 func _ready() -> void:
