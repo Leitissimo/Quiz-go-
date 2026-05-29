@@ -3,6 +3,7 @@ extends Area2D
 var is_ima_on: bool = false
 
 const SPEED: float = 600.0
+var acceleration: float = 1.0
 
 @onready var player = get_tree().get_first_node_in_group("player")
 
@@ -16,7 +17,9 @@ func _process(delta: float) -> void:
 	if is_ima_on:
 		var direction: Vector2 = (player.position - self.position).normalized()
 		
-		position += direction * delta * SPEED
+		position += direction * delta * SPEED * acceleration
+		
+		acceleration += delta
 
 
 func _on_body_entered(body: Node2D) -> void:
