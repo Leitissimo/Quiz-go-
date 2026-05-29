@@ -30,7 +30,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hawii"]
 radius = 7.0
 
-[node name="powerUpCoin" type="Area2D" unique_id=968067543]
+[node name="powerUpCoin" type="Area2D" unique_id=968067543 groups=["coins"]]
 scale = Vector2(4, 4)
 collision_layer = 16
 collision_mask = 2

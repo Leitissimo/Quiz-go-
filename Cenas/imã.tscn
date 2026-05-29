@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bv1d0kwqxkbm8"]
+
+[ext_resource type="Texture2D" uid="uid://c2gyamlcujkrr" path="res://Sprites/ima.png" id="1_3rexo"]
+[ext_resource type="Script" uid="uid://balpencrpvjav" path="res://Cenas/imã.gd" id="1_s0ry4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s0ry4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3rexo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0ry4"]
+radius = 39.012817
+
+[node name="imã" type="Area2D" unique_id=632782323]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_s0ry4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1217121054]
+scale = Vector2(0.18800001, 0.18800001)
+sprite_frames = SubResource("SpriteFrames_s0ry4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1174014433]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_s0ry4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

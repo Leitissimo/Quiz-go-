@@ -4,6 +4,7 @@ extends Node
 var power_up_coin_scene = preload("res://Cenas/power_up_coin.tscn")
 var nuke_scene = preload("res://Cenas/nuke.tscn")
 var skip_star_scene = preload("res://Cenas/skip_star.tscn")
+var ima_scene = preload("res://Cenas/imã.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +21,7 @@ func _on_timer_next_spawn_power_up_timeout() -> void:
 	var itens = {
 		"nuke": 4,    
 		"star": 1,
+		"ima": 3,
 		"nothing":5  
 		  
 	}
@@ -38,6 +40,7 @@ func _on_timer_next_spawn_power_up_timeout() -> void:
 			match item:
 				"nuke": spawn_nuke()
 				"star": spawn_star()
+				"ima": spawn_ima()
 				"nothing": nothing()
 				
 			break 
@@ -62,6 +65,13 @@ func spawn_star():
 	if ponto.get_child_count() == 0:
 		var star = skip_star_scene.instantiate()
 		ponto.add_child(star)
+
+func spawn_ima():
+	var ponto = spawn_points.pick_random()
+	
+	if ponto.get_child_count() == 0:
+		var ima = ima_scene.instantiate()
+		ponto.add_child(ima)
 
 func nothing():
 	pass
