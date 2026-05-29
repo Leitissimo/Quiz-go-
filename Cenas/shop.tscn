@@ -271,7 +271,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("6_pr76t")
 theme_override_font_sizes/font_size = 30
-text = "Aumentar Hp"
+text = "Aumentar Hp ❤️"
 
 [node name="Label2" type="Label" parent="GridContainer" unique_id=1305212791]
 layout_mode = 2
@@ -288,7 +288,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("6_pr76t")
 theme_override_font_sizes/font_size = 30
-text = "Aumentar dano"
+text = "Aumentar dano 🦾"
 
 [node name="Label3" type="Label" parent="GridContainer" unique_id=707757182]
 layout_mode = 2
@@ -305,7 +305,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("6_pr76t")
 theme_override_font_sizes/font_size = 30
-text = "Aumentar quantidade de tiro"
+text = "Aumentar quantidade de tiro 🏹"
 
 [node name="Label4" type="Label" parent="GridContainer" unique_id=1173414412]
 layout_mode = 2
@@ -322,7 +322,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("6_pr76t")
 theme_override_font_sizes/font_size = 30
-text = "Aumentar Speed"
+text = "Aumentar Speed ⛷️"
 
 [node name="HSeparator" type="HSeparator" parent="GridContainer" unique_id=1685194903]
 custom_minimum_size = Vector2(0, 10)
