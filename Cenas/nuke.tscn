@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://by0utjmpox3rx"]
 
 [ext_resource type="Script" uid="uid://g7wlqn76niqw" path="res://Cenas/nuke.gd" id="1_a0lmi"]
-[ext_resource type="Texture2D" uid="uid://dckwt681xboni" path="res://Sprites/bomba-atomica-personagem-de-pixel-art-ilustracao-vetorial_658931-43-removebg-preview.png" id="1_vk4b6"]
+[ext_resource type="Texture2D" uid="uid://bc1dxv3ck7jy0" path="res://Sprites/pinata_sprite.png" id="2_2pkqj"]
 [ext_resource type="AudioStream" uid="uid://co56ctuocfdf4" path="res://sfx/dragon-studio-nuclear-explosion-386181.mp3" id="3_2pkqj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a0lmi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_vk4b6")
+"texture": ExtResource("2_2pkqj")
 }],
 "loop": true,
 "name": &"default",
@@ -25,6 +25,7 @@ collision_mask = 2
 script = ExtResource("1_a0lmi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=135009387]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_a0lmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1713877652]

@@ -9,25 +9,36 @@ var segundos: float
 
 var banco_de_perguntas : Dictionary = {
 	"Quanto é: 35 + 42 ?": 77,
-	"Uma dúzia de ovos mais meia dúzia dá quanto?": 18,
-	"Se um triângulo tem 3 lados, quantos lados têm 4 triângulos?": 12,
 	"Quanto é o dobro de 25?": 50,
 	"Quanto é 20 + 20 + 20 + 7": 67,
 	"Em uma caixa há 12 dúzias de ovos. Quantos ovos há no total?": 144,
-	"Quanto é: 1/2 + 1/4": 0.75,
 	"Quanto é √16": 4,
-	"Quanto é 42-15":27,
+	"Quanto é 40-15":25,
 	"Quanto é 20% de 100":20,
-	"Qual o valor de 𝝅":3.14,
 	"Qual a area de um quadrado com lado 6":36,
 	"Qual o divisor comum de 6 e 8":2,
-	"Quanto é a soma dos angulos internos de um triangulo":180,
+	"Quanto é a 100+80":180,
 	"Quanto é 10*10":100,
 	"Quantos lados tem um pentagono":5,
 	"Quanto é o raio de uma circunferência com diametro 10":5,
 	"Quantos dias tem um ano bissexto":366,
-	"Qual o lado do quadrado com perimetro 24":6
-	
+	"Quanto é 15/5":3,
+	"Quantas horas tem um dia":24,
+	"Quantos minutos tem uma hora":60,
+	"Quanto é 2+2x3":8,
+	"Quanto é 14-5":9,
+	"Quantos meses tem em um ano":12,
+	"Quanto é 6x6":36,
+	"Quanto é √49":7,
+	"Quanto é 5 + 5 x 4":25,
+	"Quanto é: 53 + 29":82,
+	"Quanto é 14+13":27,
+	"Quanto é 5x3+4":19,
+	"Quanto é 5+5+6":16,
+	"Quantos segundos tem 1 minuto":60,
+	"Quantas letras tem a palavra QUARTO":6,
+	"Quantos lados tem um dado":6,
+	"Quantos dias tem uma semana":7
 }
 
 func _ready() -> void:
