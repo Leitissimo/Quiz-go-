@@ -240,6 +240,7 @@ offset_top = 131.0
 offset_right = 151.0
 offset_bottom = 415.0
 grow_horizontal = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1907461144]
@@ -255,6 +256,14 @@ layout_mode = 2
 layout_mode = 2
 text = "Play!"
 
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1390876221]
+layout_mode = 2
+text = "Shop"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=696112931]
+layout_mode = 2
+text = "Config"
+
 [node name="player" parent="." unique_id=104276685 instance=ExtResource("5_ch3q6")]
 position = Vector2(583, 165)
 collision_mask = 7
@@ -268,4 +277,43 @@ stream = ExtResource("7_vorps")
 autoplay = true
 parameters/looping = true
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=865040738]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = 131.0
+offset_right = 151.0
+offset_bottom = 415.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2" unique_id=1644410099]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Config"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer2" unique_id=897304021]
+layout_mode = 2
+
+[node name="Button" type="CheckButton" parent="VBoxContainer2" unique_id=1830077315]
+layout_mode = 2
+text = "Full screen"
+
+[node name="Button2" type="CheckButton" parent="VBoxContainer2" unique_id=674579833]
+layout_mode = 2
+text = "V-Sync"
+
+[node name="return_to_menu" type="Button" parent="VBoxContainer2" unique_id=1837618875]
+layout_mode = 2
+text = "Return"
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="toggled" from="VBoxContainer2/Button" to="." method="_on_button_toggled"]
+[connection signal="toggled" from="VBoxContainer2/Button2" to="." method="_on_button_2_toggled"]
+[connection signal="pressed" from="VBoxContainer2/return_to_menu" to="." method="_on_return_to_menu_pressed"]

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://d1kniia5jiudw" path="res://Cenas/player_shoot.gd" id="1_b6e7f"]
 [ext_resource type="Texture2D" uid="uid://elh7l3pivtqp" path="res://Sprites/white_bubble_sprite.png" id="2_b6e7f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6e7f"]
-size = Vector2(26, 11)
+[sub_resource type="CircleShape2D" id="CircleShape2D_b6e7f"]
+radius = 26.019224
 
 [node name="player_shoot" type="Area2D" unique_id=510219438]
 collision_layer = 8
@@ -17,6 +17,6 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_b6e7f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=16435632]
-shape = SubResource("RectangleShape2D_b6e7f")
+shape = SubResource("CircleShape2D_b6e7f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

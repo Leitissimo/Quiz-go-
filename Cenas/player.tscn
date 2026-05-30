@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://didnpxc33qkxp" path="res://Sprites/2/Death.png" id="3_jx05c"]
 [ext_resource type="Texture2D" uid="uid://bx57o2wejmcvh" path="res://Sprites/2/Walk.png" id="4_5p0qj"]
 [ext_resource type="Script" uid="uid://c31tp7yyrbeys" path="res://Cenas/player_animation.gd" id="5_yuqgu"]
+[ext_resource type="Script" uid="uid://bh16a7mpxvn64" path="res://Cenas/FPS.gd" id="7_8vhvd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yuqgu"]
 atlas = ExtResource("2_iersn")
@@ -250,6 +251,14 @@ wait_time = 3.0
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=662720221]
+
+[node name="Label4" type="Label" parent="CanvasLayer" unique_id=1980585409]
+offset_left = 1060.0
+offset_top = 8.0
+offset_right = 1096.0
+offset_bottom = 31.0
+text = "FPS: "
+script = ExtResource("7_8vhvd")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=281909520]
 offset_right = 40.0

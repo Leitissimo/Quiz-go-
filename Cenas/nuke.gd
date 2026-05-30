@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: Node2D) -> void :
 	if body.is_in_group("player"):
 		$AudioStreamPlayer2D.play()
 		executar_nuke_circulo()
@@ -20,7 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 func explodir():
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	for e in enemies:
-		e.queue_free()
+		e.call_deferred("queue_free")
 
 func executar_nuke_circulo():
 	var layer = CanvasLayer.new()

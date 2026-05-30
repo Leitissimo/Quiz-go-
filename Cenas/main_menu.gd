@@ -25,3 +25,31 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://Cenas/main.tscn")
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://Cenas/shop.tscn")
+
+
+func _on_button_3_pressed() -> void:
+	$VBoxContainer.hide()
+	$VBoxContainer2.show()
+
+
+func _on_return_to_menu_pressed() -> void:
+	$VBoxContainer.show()
+	$VBoxContainer2.hide()
+
+
+func _on_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_button_2_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	else:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)

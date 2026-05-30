@@ -6,6 +6,11 @@ var player_shoot_scene = preload("res://Cenas/player_shoot.tscn")
 
 @export var isCameraOn:bool
 
+@export var up: String = "up"
+@export var down: String = "down"
+@export var left: String = "left"
+@export var right: String = "right"
+
 var speed: float = 500.0
 var can_move: bool = true
 var invuneravel: bool = false
@@ -28,9 +33,16 @@ func _ready() -> void:
 	$CanvasLayer/HBoxContainer/Label.text = "HEALTH: "+str(hp)
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("full screen") and DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
+	elif Input.is_action_just_pressed("full screen") and DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	
 	if not dead:
 		if can_move:
-			direction = Input.get_vector("left", "right", "up", "down").normalized()
+			direction = Input.get_vector(left, right, up, down).normalized()
 			
 			velocity = direction * speed
 		else:
