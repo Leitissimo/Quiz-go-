@@ -42,10 +42,12 @@ func _on_return_to_menu_pressed() -> void:
 
 
 func _on_button_toggled(toggled_on: bool) -> void:
-	if toggled_on:
+	if toggled_on :
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		GameManager.full_screen = true
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		GameManager.full_screen = false
 
 
 func _on_button_2_toggled(toggled_on: bool) -> void:

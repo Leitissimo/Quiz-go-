@@ -12,9 +12,11 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("full screen") and DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		GameManager.full_screen = !GameManager.full_screen
 		
 	elif Input.is_action_just_pressed("full screen") and DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		GameManager.full_screen = !GameManager.full_screen
 
 
 func _on_return_pressed() -> void:

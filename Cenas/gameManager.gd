@@ -12,6 +12,7 @@ var dano: int = 1
 var qtd_tiro: int = 1
 var quiz_aberto: bool = false
 var speed: float = 500.0
+var full_screen: bool = false
 
 func _ready() -> void:
 	load_game()
